@@ -3,7 +3,7 @@ const yargs = require('yargs')
 
 const loadNotes = () => {
     try {
-        const dataBuffer = fs.readFileSync('json.json')
+        const dataBuffer = fs.readFileSync('notes.json')
         const dataJSON = dataBuffer.toString()
 
         return JSON.parse(dataJSON)
@@ -32,7 +32,7 @@ const isFound = (notes, title) => {
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
-    fs.writeFileSync('json.json', dataJSON)
+    fs.writeFileSync('notes.json', dataJSON)
 }
 
 const showNotes = () => {
